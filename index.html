@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+    <title>Difference Checker</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="css/style.min.css">
+    <link rel="manifest" href="manifest.json">
+    <link rel="shortcut icon" href="favicon.ico" />
+</head>
+
+<body>
+
+
+    <div class="container">
+        <input type="radio" name="tab" id="r1" value="r1" checked>
+        <input type="radio" name="tab" id="r2" value="r2">
+
+        <div class="tabs">
+            <label for="r1" id="lr1">Source</label><label for="r2" id="lr2">Difference</label>
+        </div>
+
+        <div class="tab-content src">
+            <div class="editor org"></div>
+            <div class="editor new"></div>
+            <div class="file-inputs">
+                <div class="src s1">
+                    <div class="url">
+                        <input type="text" id="url1"><button>Fetch</button>
+                    </div>
+                    <input type="file" id="fOrg">
+                </div>
+
+                <div class="src s2">
+                    <div class="url">
+                        <input type="text" id="url2"><button>Fetch</button>
+                    </div>    
+                    <input type="file" id="fNew">
+                </div>
+
+            </div>
+        </div>
+
+        <div class="tab-content diff">
+            <div class="editor dc"></div>
+        </div>
+
+        <div class="button-container" style="text-align: center;">
+            <div id="compare">Compare</div>
+        </div>
+    </div>
+
+
+    <script src="js/monaco-editor-package/min/vs/loader.js"></script>
+    <script src="js/main.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,55 @@
+* {
+    box-sizing: border-box;
+}
+
+body { font-family: calibri; margin: 0;}
+
+.container {
+    height: 100vh; background: #f1f1f1; display: grid; grid-template-rows: 30px minmax(0, 1fr) 60px;
+}
+
+.tabs {
+    display: flex; grid-row: 1 / span 1;
+    label {
+        padding: 5px 10px; display: inline-block; border: solid 1px #ccc; border-bottom: solid 1px transparent; transform: translateY(1px); cursor: pointer;
+    }
+    span {margin-left: auto; color: #ccc;}
+}
+
+.tab-content {
+    display: none; flex: 1 1 auto; position: relative; background: #fff; border: solid 1px #ccc; flex-direction: row; flex-wrap: wrap; grid-row: 2 / span 1;
+    .editor { width: 100%; height: 100%; overflow: hidden; border-right: solid 1px #ccc; }
+    &.src .editor {width: 50%;}
+}
+
+.file-inputs {
+    display: flex; flex: 1; justify-content: space-between; position: absolute; z-index: 3; bottom: -40px; width: 100%; left: 0;
+
+    .src {
+        display: flex; flex: 1 1 auto; justify-content: center;
+        .url { margin-right: 50px; }
+    }
+}
+
+input[type="radio"] {
+    display: none;
+    &#r1:checked {
+        & ~ .tabs #lr1 { background-color: #fff; border-bottom: solid 1px #f1f1f1; }
+        & ~ .tab-content.src  { display: flex; }
+    }
+    &#r2:checked {
+        & ~ .tabs #lr2 { background-color: #fff; border-bottom: solid 1px #f1f1f1; }
+        & ~ .tab-content.diff { display: flex; }
+    }
+}
+
+#compare {
+    background: #2196F3; color: #fff; display: inline-block; padding: 10px 35px; margin-top: 10px; border-radius: 5px; cursor: pointer; border: solid 1px #147acc;
+    &:hover {
+        background: #147acc;
+    }
+}
+
+.button-container {
+    display: block; position: relative; z-index: 3; grid-row: 3 / span 1; margin: 0 auto;
+}
