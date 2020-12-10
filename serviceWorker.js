@@ -1,9 +1,10 @@
 console.log("diffchecker worker init");
 self.addEventListener( 'install', event => {
     event.waitUntil(
-        caches.open('diff-checker-v0.0.2').then(cache => cache.addAll([
+        caches.open('diff-checker-v0.0.3').then(cache => cache.addAll([
             'shell.html',
             'css/style.min.css',
+            'js/main.js',
             'js/monaco-editor-package/min/vs/loader.js',
             'js/monaco-editor-package/min/vs/editor/editor.main.js',
             'js/monaco-editor-package/min/vs/editor/editor.main.css',
@@ -16,7 +17,7 @@ self.addEventListener( 'install', event => {
 
 // cache management
 self.addEventListener('activate', function(event) {
-    var cacheWhitelist = ['diff-checker-v0.0.2'];
+    var cacheWhitelist = ['diff-checker-v0.0.3'];
     event.waitUntil(
         caches.keys().then(function(cacheNames) {
             return Promise.all(
