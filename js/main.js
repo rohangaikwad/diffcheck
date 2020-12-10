@@ -4,10 +4,10 @@ var orgEditor, newEditor, diffEditor;
 
 require(['vs/editor/editor.main'], function () {
     orgEditor = monaco.editor.create(document.querySelector('.editor.org'), {
-        value: 'abc', wordWrap: true, language: 'plaintext'
+        value: 'abc', wordWrap: true, language: 'html'
     });
     newEditor = monaco.editor.create(document.querySelector('.editor.new'), {
-        value: 'xyz', wordWrap: true, language: 'plaintext'
+        value: 'xyz', wordWrap: true, language: 'html'
     });
 
     diffEditor = monaco.editor.createDiffEditor(document.querySelector('.editor.dc'));
