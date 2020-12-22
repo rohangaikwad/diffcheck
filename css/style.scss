@@ -14,6 +14,8 @@ body { font-family: calibri; margin: 0;}
         padding: 5px 10px; display: inline-block; border: solid 1px #ccc; border-bottom: solid 1px transparent; transform: translateY(1px); cursor: pointer;
     }
     span {margin-left: auto; color: #ccc;}
+
+    select { margin-left: auto; }
 }
 
 .tab-content {
